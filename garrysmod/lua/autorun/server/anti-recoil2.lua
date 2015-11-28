@@ -19,12 +19,12 @@ hook.Add("StartCommand", "StartCommand-Anti-Recoil", function(pl, key)
 	
     --Defines modifer to increase/decrease recoil 
     --Increase for more recoil, decrease for less
-        local modifer = 1
+         modifer = 1
         
     --Change to 1 to enable advanced functions such as the ability to change
     --weapon recoils per type instead of global
     --Set to 0 by default to reduce server load
-        local advancedfunctions = 0
+         advancedfunctions = 0
         
         
     --Checks to see if advanced functions are enabled    
@@ -33,80 +33,80 @@ if advancedfunctions = 1 then
     --Changing a value to something other than 0 will make it overwrite the global modifer (Only for the one changed, not all of them)
         
         --Primary Kickup Recoil (If the method is Kickup)
-        local recoilValuePrimaryKickUpModifer = 0
+         recoilValuePrimaryKickUpModifer = 0
         
         --Primary KickDown Recoil (If the method is Kickdown)
-        local recoilValuePrimaryKickDownModifer = 0
+         recoilValuePrimaryKickDownModifer = 0
         
         --Primary Recoil Recoil (If the method is recoil)
-        local recoilValuePrimaryRecoilModifer = 0
+         recoilValuePrimaryRecoilModifer = 0
         
         --Secondary Kickup Recoil (If the method is Kickup)
-        local recoilValueSecondaryKickUpModifer = 0
+         recoilValueSecondaryKickUpModifer = 0
         
          --Secondary KickDown Recoil (If the method is KickDown)
-        local recoilValueSecondaryKickDownModifer = 0
+         recoilValueSecondaryKickDownModifer = 0
         
          --Secondary Recoil Recoil (If the method is Recoil)
-        local recoilValueSecondaryRecoilModifer = 0
+         recoilValueSecondaryRecoilModifer = 0
             
         --Defining the values for primary weapon recoil
     if pl:GetActiveWeapon().Primary.KickUp then --If the method is KickUp
         if recoilValuePrimaryKickupModifer = 0 then -- If the modifer for this type was set above (If 0 then use global Modifier)
-            local recoilValuePrimaryKickUp = pl:GetActiveWeapon().Primary.KickUp * modifer
+             recoilValuePrimaryKickUp = pl:GetActiveWeapon().Primary.KickUp * modifer
         else 
-            local recoilValuePrimaryKickUp = pl:GetActiveWeapon().Primary.KickUp * recoilValuePrimaryKickUpModifer
+             recoilValuePrimaryKickUp = pl:GetActiveWeapon().Primary.KickUp * recoilValuePrimaryKickUpModifer
         end
      end
         
     if pl:GetActiveWeapon().Primary.KickDown then --If the method is KickDown
         if recoilValuePrimaryKickDownModifer = 0 then -- If the modifer for this type was set above (If 0 then use global Modifier)
-            local recoilValuePrimaryKickDown = pl:GetActiveWeapon().Primary.KickDown * modifer
+             recoilValuePrimaryKickDown = pl:GetActiveWeapon().Primary.KickDown * modifer
         else 
-            local recoilValuePrimaryKickDown = pl:GetActiveWeapon().Primary.KickDown * recoilValuePrimaryKickDownModifer
+             recoilValuePrimaryKickDown = pl:GetActiveWeapon().Primary.KickDown * recoilValuePrimaryKickDownModifer
         end
     end
         
     if pl:GetActiveWeapon().Primary.Recoil then --If the method is Recoil   
         if recoilValuePrimaryRecoilModifer = 0 then -- If the modifer for this type was set above (If 0 then use global Modifier)
-            local recoilValuePrimaryRecoil = pl:GetActiveWeapon().Primary.Recoil * modifer
+             recoilValuePrimaryRecoil = pl:GetActiveWeapon().Primary.Recoil * modifer
         else 
-            local recoilValuePrimaryRecoil = pl:GetActiveWeapon().Primary.Recoil * recoilValuePrimaryRecoilModifer
+             recoilValuePrimaryRecoil = pl:GetActiveWeapon().Primary.Recoil * recoilValuePrimaryRecoilModifer
         end
     end    
         --Defining the values for secondary weapon recoil
     if pl:GetActiveWeapon().Secondary.KickUp then --If the method is KickUp
                 if recoilValueSecondaryKickupModifer = 0 then -- If the modifer for this type was set above (If 0 then use global Modifier)
-            local recoilValueSecondaryKickUp = pl:GetActiveWeapon().Secondary.KickUp * modifer
+             recoilValueSecondaryKickUp = pl:GetActiveWeapon().Secondary.KickUp * modifer
         else 
-            local recoilValueSecondaryKickUp = pl:GetActiveWeapon().Secondary.KickUp * recoilValueSecondaryKickUpModifer
+             recoilValueSecondaryKickUp = pl:GetActiveWeapon().Secondary.KickUp * recoilValueSecondaryKickUpModifer
         end
     end
         
     if pl:GetActiveWeapon().Secondary.KickDown then --If the method is KickDown
         if recoilValueSecondaryKickDownModifer = 0 then -- If the modifer for this type was set above (If 0 then use global Modifier)
-            local recoilValueSecondaryKickDown = pl:GetActiveWeapon().Secondary.KickDown * modifer
+             recoilValueSecondaryKickDown = pl:GetActiveWeapon().Secondary.KickDown * modifer
         else 
-            local recoilValueSecondaryKickDown = pl:GetActiveWeapon().Secondary.KickDown * recoilValueSecondaryKickDownModifer
+             recoilValueSecondaryKickDown = pl:GetActiveWeapon().Secondary.KickDown * recoilValueSecondaryKickDownModifer
         end
     end
         
     if pl:GetActiveWeapon().Secondary.Recoil then --If the method is Recoil
         if recoilValueSecondaryRecoilModifer = 0 then -- If the modifer for this type was set above (If 0 then use global Modifier)
-            local recoilValueSecondaryRecoil = pl:GetActiveWeapon().Secondary.Recoil * modifer
+             recoilValueSecondaryRecoil = pl:GetActiveWeapon().Secondary.Recoil * modifer
         else 
-            local recoilValueSecondaryRecoil = pl:GetActiveWeapon().Secondary.Recoil * recoilValueSecondaryRecoilModifer
+             recoilValueSecondaryRecoil = pl:GetActiveWeapon().Secondary.Recoil * recoilValueSecondaryRecoilModifer
         end
     end   
        
 else
                     
-    local recoilValuePrimaryKickUp = pl:GetActiveWeapon().Primary.KickUp * modifer
-    local recoilValuePrimaryKickDown = pl:GetActiveWeapon().Primary.KickDown * modifer
-    local recoilValuePrimaryRecoil = pl:GetActiveWeapon().Primary.Recoil * modifer        
-    local recoilValueSecondaryKickUp = pl:GetActiveWeapon().Secondary.KickUp * modifer
-    local recoilValueSecondaryKickDown = pl:GetActiveWeapon().Secondary.KickDown * modifer
-    local recoilValueSecondaryRecoil = pl:GetActiveWeapon().Secondary.Recoil * modifer           
+     recoilValuePrimaryKickUp = pl:GetActiveWeapon().Primary.KickUp * modifer
+     recoilValuePrimaryKickDown = pl:GetActiveWeapon().Primary.KickDown * modifer
+     recoilValuePrimaryRecoil = pl:GetActiveWeapon().Primary.Recoil * modifer        
+     recoilValueSecondaryKickUp = pl:GetActiveWeapon().Secondary.KickUp * modifer
+     recoilValueSecondaryKickDown = pl:GetActiveWeapon().Secondary.KickDown * modifer
+     recoilValueSecondaryRecoil = pl:GetActiveWeapon().Secondary.Recoil * modifer           
 end
                  
              
@@ -154,7 +154,7 @@ end
 		--If the recoil method is recoil.
 		if pl:GetActiveWeapon().Secondary.Recoil then
 			--Force the player to look down while secondary firing.
-			pl:SetEyeAngles( pl:EyeAngles() +  Angle(local recoilValueSecondaryKickRecoil,0,0) ) --Angle (Up,Down | Left,Right | Screen rotate)
+			pl:SetEyeAngles( pl:EyeAngles() +  Angle( recoilValueSecondaryKickRecoil,0,0) ) --Angle (Up,Down | Left,Right | Screen rotate)
 		end
 	end
 end)
