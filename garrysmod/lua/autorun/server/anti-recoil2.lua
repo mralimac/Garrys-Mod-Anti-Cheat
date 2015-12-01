@@ -19,7 +19,7 @@ hook.Add("StartCommand", "StartCommand-Anti-Recoil", function(pl, key)
 	
     --Defines modifer to increase/decrease recoil 
     --Increase for more recoil, decrease for less
-         modifer = 1
+         modifer = 2
         
     --Change to 1 to enable advanced functions such as the ability to change
     --weapon recoils per type instead of global
@@ -110,8 +110,8 @@ else
 end
                  
              
-	--If the player is using primary attack and the clip on their weapon is greater than 0 (not empty).
-	if pl:KeyDown(IN_ATTACK) and pl:GetActiveWeapon():Clip1() > 0 then
+	--If the player is using primary attack and the clip on their weapon is greater than 0 (not empty) and if the player is alive.
+	if pl:KeyDown(IN_ATTACK) and pl:GetActiveWeapon():Clip1() > 0 and pl:Alive() then
 		--If the weapon they are holding has a recoil method attached to it by the SWEP.
 		--If the recoil method is kickup.
 		if pl:GetActiveWeapon().Primary.KickUp then
@@ -136,8 +136,8 @@ end
             
             
             
-	--If the player is using secondary attack and the clip on their weapon is greater than 0 (not empty).
-	if pl:KeyDown(IN_ATTACK2) and pl:GetActiveWeapon():Clip1() > 0 then
+	--If the player is using secondary attack and the clip on their weapon is greater than 0 (not empty) and if the player is alive.
+	if pl:KeyDown(IN_ATTACK2) and pl:GetActiveWeapon():Clip1() > 0 and pl:Alive() then
 		--If the weapon they are holding has a recoil method attached to it by the SWEP.
 		--If the recoil method is kickup.
 		if pl:GetActiveWeapon().Secondary.KickUp then
