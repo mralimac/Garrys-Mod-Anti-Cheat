@@ -19,7 +19,7 @@ hook.Add("StartCommand", "StartCommand-Anti-Recoil", function(pl, key)
 	
     --Defines modifer to increase/decrease recoil 
     --Increase for more recoil, decrease for less
-         modifer = 2
+         modifer = 1
         
     --Change to 1 to enable advanced functions such as the ability to change
     --weapon recoils per type instead of global
